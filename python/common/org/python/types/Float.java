@@ -236,7 +236,8 @@ public class Float extends org.python.types.Object {
     }
 
     @org.python.Method(
-        __doc__ = ""
+        __doc__ = "",
+        args = {"other"}
     )
     public org.python.Object __add__(org.python.Object other) {
         if (other instanceof org.python.types.Int) {
@@ -252,7 +253,8 @@ public class Float extends org.python.types.Object {
     }
 
     @org.python.Method(
-        __doc__ = ""
+        __doc__ = "",
+        args = {"other"}
     )
     public org.python.Object __sub__(org.python.Object other) {
         if (other instanceof org.python.types.Int) {
@@ -271,7 +273,8 @@ public class Float extends org.python.types.Object {
     }
 
     @org.python.Method(
-        __doc__ = ""
+        __doc__ = "",
+        args = {"other"}
     )
     public org.python.Object __mul__(org.python.Object other) {
 
