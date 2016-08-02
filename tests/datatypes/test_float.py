@@ -90,7 +90,7 @@ class BinaryFloatOperationTests(BinaryOperationTestCase, TranspileTestCase):
     not_implemented = [
         'test_add_bytearray',
         'test_add_class',
-        'test_add_float',
+
         'test_add_complex',
         'test_add_frozenset',
         'test_add_slice',
@@ -121,17 +121,10 @@ class BinaryFloatOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_and_slice',
 
         'test_eq_bytearray',
-        'test_eq_bytes',
         'test_eq_class',
         'test_eq_complex',
-        'test_eq_dict',
         'test_eq_frozenset',
-        'test_eq_list',
-        'test_eq_NotImplemented',
-        'test_eq_range',
-        'test_eq_set',
         'test_eq_slice',
-        'test_eq_tuple',
 
         'test_floor_divide_bytearray',
         'test_floor_divide_class',
@@ -205,19 +198,11 @@ class BinaryFloatOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_direct_multiply_str',
         'test_direct_multiply_tuple',
 
-        'test_ne_bytes',
         'test_ne_bytearray',
         'test_ne_class',
         'test_ne_complex',
-        'test_ne_dict',
         'test_ne_frozenset',
-        'test_ne_NotImplemented',
-        'test_ne_list',
-        'test_ne_range',
-        'test_ne_set',
         'test_ne_slice',
-        'test_ne_tuple',
-
 
         'test_or_bytearray',
         'test_or_class',
@@ -300,7 +285,7 @@ class InplaceFloatOperationTests(InplaceOperationTestCase, TranspileTestCase):
 
     not_implemented = [
         'test_add_bytearray',
-        'test_add_float',
+
         'test_add_class',
         'test_add_complex',
         'test_add_frozenset',
