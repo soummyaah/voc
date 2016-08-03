@@ -742,11 +742,10 @@ public class Object implements org.python.Object {
             this.setValue(this.__mul__(other));
             return this;
         } catch (org.python.exceptions.TypeError e) {
-            if(e.getMessage().equals("can't multiply sequence by non-int of type '" + this.typeName() + "'")) {
-                throw new org.python.exceptions.TypeError("can't multiply sequence by non-int of type '" + this.typeName() + "'");
-            } else {
+            if(e.getMessage().equals("unsupported operand type(s) for *: '" + this.typeName() + "' and '" + other.typeName() + "'")) {
                 throw new org.python.exceptions.TypeError("unsupported operand type(s) for *=: '" + this.typeName() + "' and '" + other.typeName() + "'");
             }
+            throw new org.python.exceptions.TypeError(e.getMessage());
         }
     }
 
