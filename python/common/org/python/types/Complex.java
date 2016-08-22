@@ -17,14 +17,15 @@ public class Complex extends org.python.types.Object {
 
     public java.lang.Object toJava() {
         // return this.value;
+        throw new org.python.exceptions.NotImplementedError("complex.toJava() has not been implemented.");
     }
 
     public org.python.Object byValue() {
-        // return new org.python.types.Bool(this.value);
+        throw new org.python.exceptions.NotImplementedError("complex.byValue() has not been implemented.");
     }
 
     public int hashCode() {
-        // return new java.lang.Boolean(this.value).hashCode();
+        throw new org.python.exceptions.NotImplementedError("complex.hashCode() has not been implemented.");
     }
 
     public Complex(double real_val) {
@@ -117,7 +118,7 @@ public class Complex extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.types.Bool __bool__() {
-        return new org.python.types.Bool(this.value);
+        throw new org.python.exceptions.NotImplementedError("complex.__bool__ has not been implemented.");
     }
 
     public boolean __setattr_null(java.lang.String name, org.python.Object value) {
