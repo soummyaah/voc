@@ -2,7 +2,7 @@ package org.python.types;
 
 public class Complex extends org.python.types.Object {
     public double real;
-    public double imaginary;
+    public double imag;
 
     /**
      * A utility method to update the internal value of this object.
@@ -11,8 +11,8 @@ public class Complex extends org.python.types.Object {
      * obj must be of type org.python.types.Complex
      */
     void setValue(org.python.Object obj) {
-        this.real = ((org.python.types.Bool) obj).real;
-        this.imaginary = ((org.python.types.Bool) obj).imaginary;
+        this.real = ((org.python.types.Complex) obj).real;
+        this.imag = ((org.python.types.Complex) obj).imag;
     }
 
     public java.lang.Object toJava() {
@@ -35,7 +35,7 @@ public class Complex extends org.python.types.Object {
     public Complex(double real_val, double imagi_val) {
         super();
         this.real = real_val;
-        this.imaginary = imagi_val;
+        this.imag = imagi_val;
     }
 
     public Complex(long real_val) {
@@ -46,7 +46,7 @@ public class Complex extends org.python.types.Object {
     public Complex(long real_val, long imagi_val) {
         super();
         this.real = real_val;
-        this.imaginary = imagi_val;
+        this.imag = imagi_val;
     }
 
     // public org.python.Object __new__() {
@@ -193,261 +193,187 @@ public class Complex extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.Object __lshift__(org.python.Object other) {
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Int((((org.python.types.Bool) this).value ? 1 : 0) << (((org.python.types.Bool) other).value ? 1 : 0));
-        } else if (other instanceof org.python.types.Int) {
-            long other_val = ((org.python.types.Int) other).value;
-            if (other_val < 0) {
-                throw new org.python.exceptions.ValueError("negative shift count");
-            }
-            return new org.python.types.Int((((org.python.types.Bool) this).value ? 1 : 0) << other_val);
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for <<: 'bool' and '" + other.typeName() + "'");
+        throw new org.python.exceptions.NotImplementedError("complex.__lshift__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rshift__(org.python.Object other) {
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Int((((org.python.types.Bool) this).value ? 1 : 0) >> (((org.python.types.Bool) other).value ? 1 : 0));
-        } else if (other instanceof org.python.types.Int) {
-            long other_val = ((org.python.types.Int) other).value;
-            if (other_val < 0) {
-                throw new org.python.exceptions.ValueError("negative shift count");
-            }
-            return new org.python.types.Int((((org.python.types.Bool) this).value ? 1 : 0) >> other_val);
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for >>: 'bool' and '" + other.typeName() + "'");
-    }
+        throw new org.python.exceptions.NotImplementedError("complex.__rshift__ has not been implemented.");    }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __and__(org.python.Object other) {
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) & (((org.python.types.Bool) other).value ? 1 : 0));
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for &: 'bool' and '" + other.typeName() + "'");
+        throw new org.python.exceptions.NotImplementedError("complex.__and__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __xor__(org.python.Object other) {
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) ^ (((org.python.types.Bool) other).value ? 1 : 0));
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for ^: 'bool' and '" + other.typeName() + "'");
+        throw new org.python.exceptions.TypeError("unsupported operand type(s) for ^: 'complex' and '" + other.typeName() + "'");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __or__(org.python.Object other) {
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) | (((org.python.types.Bool) other).value ? 1 : 0));
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for |: 'bool' and '" + other.typeName() + "'");
+        throw new org.python.exceptions.TypeError("unsupported operand type(s) for |: 'complex' and '" + other.typeName() + "'");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __radd__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__radd__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__radd__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rsub__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rsub__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rsub__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rmul__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rmul__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rmul__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rtruediv__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rtruediv__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rtruediv__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rfloordiv__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rfloordiv__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rfloordiv__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rmod__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rmod__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rmod__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rdivmod__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rdivmod__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rdivmod__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rpow__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rpow__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rpow__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rlshift__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rlshift__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rlshift__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rrshift__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rrshift__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rrshift__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rand__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rand__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rand__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __rxor__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__rxor__() has not been implemented.");
+        throw new org.python.exceptions.NotImplementedError("complex.__rxor__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __ror__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("bool.__ror__() has not been implemented.");
-    }
-
-    @org.python.Method(
-        __doc__ = ""
-    )
-
-    public org.python.Object __iadd__(org.python.Object other) {
-        int this_val = (((org.python.types.Bool) this).value ? 1 : 0);
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Int( this_val += (((org.python.types.Bool) other).value ? 1 : 0) );
-        } else if (other instanceof org.python.types.Int) {
-            return new org.python.types.Int( this_val += ((org.python.types.Int) other).value);
-        } else if (other instanceof org.python.types.Float) {
-            return new org.python.types.Float(this_val += ((org.python.types.Float) other).value);
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for +=: 'bool' and '" + other.typeName() + "'");
-    }
-
-    @org.python.Method(
-        __doc__ = ""
-    )
-    public org.python.Object __ilshift__(org.python.Object other) {
-        int this_val = (((org.python.types.Bool) this).value ? 1 : 0);
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Int(this_val <<= (((org.python.types.Bool) other).value ? 1 : 0));
-        } else if (other instanceof org.python.types.Int) {
-            long other_val = ((org.python.types.Int) other).value;
-            if (other_val < 0) {
-                throw new org.python.exceptions.ValueError("negative shift count");
-            }
-            return new org.python.types.Int(this_val <<= other_val);
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for <<=: 'bool' and '" + other.typeName() + "'");
-    }
-
-    @org.python.Method(
-        __doc__ = ""
-    )
-    public org.python.Object __irshift__(org.python.Object other) {
-        int this_val = (((org.python.types.Bool) this).value ? 1 : 0);
-        if (other instanceof org.python.types.Bool) {
-            return new org.python.types.Int(this_val >>= (((org.python.types.Bool) other).value ? 1 : 0));
-        } else if (other instanceof org.python.types.Int) {
-            long other_val = ((org.python.types.Int) other).value;
-            if (other_val < 0) {
-                throw new org.python.exceptions.ValueError("negative shift count");
-            }
-            return new org.python.types.Int(this_val >>= other_val);
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for >>=: 'bool' and '" + other.typeName() + "'");
+        throw new org.python.exceptions.NotImplementedError("complex.__ror__() has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __neg__() {
-        return new org.python.types.Int(this.value ? -1 : 0);
+        throw new org.python.exceptions.NotImplementedError("complex.__neg__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __pos__() {
-        return new org.python.types.Int(this.value ? 1 : 0);
+        throw new org.python.exceptions.NotImplementedError("complex.__pos__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __abs__() {
-        return new org.python.types.Int(this.value ? 1 : 0);
+        throw new org.python.exceptions.NotImplementedError("complex.__abs__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __invert__() {
-        return new org.python.types.Int(this.value ? -2 : -1);
+        throw new org.python.exceptions.NotImplementedError("complex.__invert__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.types.Int __int__() {
-        return new org.python.types.Int(this.value ? 1 : 0);
+        throw new org.python.exceptions.NotImplementedError("complex.__int__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.types.Float __float__() {
-        return new org.python.types.Float(this.value ? 1 : 0);
+        throw new org.python.exceptions.NotImplementedError("complex.__float__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __round__(org.python.Object ndigits) {
-        if (ndigits instanceof org.python.types.Int){
-               return new org.python.types.Int(this.value? 1:0);
-        }
-         throw new org.python.exceptions.TypeError("'"+ndigits.typeName()+"' object cannot be interpreted as an integer");
+        throw new org.python.exceptions.NotImplementedError("complex.__round__ has not been implemented.");
     }
 
     @org.python.Method(
         __doc__ = ""
     )
     public org.python.Object __index__() {
-        return new org.python.types.Int(this.value ? 1 : 0);
+        throw new org.python.exceptions.NotImplementedError("complex.__index__ has not been implemented.");
+    }
+
+    @org.python.Method(
+        __doc__ = ""
+    )
+    public org.python.Object conjugate() {
+        throw new org.python.exceptions.NotImplementedError("complex.conjugate has not been implemented.");
     }
 }
